@@ -1,6 +1,8 @@
 package services
 
 import (
+	"fmt"
+	"net"
 	"os/exec"
 	"runtime"
 )
@@ -21,4 +23,13 @@ func StartMySQL(mysqlPath string) error {
 	}
 	cmd := exec.Command(bin)
 	return cmd.Start()
+}
+
+func IsPortInUse(port int) bool {
+	ln, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
+	if err != nil {
+		return true // Port is in use
+	}
+	ln.Close()
+	return false // Port is free
 }
