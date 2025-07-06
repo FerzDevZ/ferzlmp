@@ -21,7 +21,12 @@ var initCmd = &cobra.Command{
 		}
 		configPath := filepath.Join("config", "ferzlmp.yaml")
 		if _, err := os.Stat(configPath); os.IsNotExist(err) {
-			defaultConfig := """apache_path: modules/apache/bin/httpd\nmysql_path: modules/mysql/bin/mysqld\nphp_path: modules/php/bin/php\nprojects_dir: projects\nvhost_dir: modules/apache/conf/vhosts\n"""
+			defaultConfig := `apache_path: modules/apache/bin/httpd
+mysql_path: modules/mysql/bin/mysqld
+php_path: modules/php/bin/php
+projects_dir: projects
+vhost_dir: modules/apache/conf/vhosts
+`
 			if err := os.WriteFile(configPath, []byte(defaultConfig), 0644); err != nil {
 				color.Red("Failed to write config: %v", err)
 				return
