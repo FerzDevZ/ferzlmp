@@ -1,4 +1,4 @@
-module github.com/ferzdev/ferzlmp
+module github.com/FerzDevZ/ferzlmp
 
 go 1.21.0
 
