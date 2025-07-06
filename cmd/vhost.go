@@ -13,7 +13,7 @@ import (
 var vhostCmd = &cobra.Command{
 	Use:   "vhost [add|remove] [domain] [path]",
 	Short: "Manage Apache virtualhosts",
-	Long:  `Adds or removes Apache virtualhosts and updates the local hosts file.",
+	Long:  `Adds or removes Apache virtualhosts and updates the local hosts file.`,
 	Args:  cobra.MinimumNArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 		action := args[0]
