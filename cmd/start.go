@@ -1,15 +1,13 @@
 package cmd
 
 import (
-	"fmt"
-	"os"
-	"path/filepath"
-
+	"github.com/FerzDevZ/ferzlmp/internal"
 	"github.com/FerzDevZ/ferzlmp/internal/config"
 	"github.com/FerzDevZ/ferzlmp/internal/services"
-	"github.com/FerzDevZ/ferzlmp/internal"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
+	"os"
+	"path/filepath"
 )
 
 var startCmd = &cobra.Command{

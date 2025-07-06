@@ -1,13 +1,11 @@
 package cmd
 
 import (
-	"fmt"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
 	"path/filepath"
-	"github.com/FerzDevZ/ferzlmp/internal/config"
 )
 
 var newCmd = &cobra.Command{
@@ -52,19 +50,11 @@ var newCmd = &cobra.Command{
 		}
 		color.Green("Project %s created at %s!", name, projectPath)
 		// Auto-create vhost
-		domain := fmt.Sprintf("%s.test", name)
+		domain := name + ".test"
 		vhostPath := filepath.Join("modules", "apache", "conf", "vhosts")
 		if err := os.MkdirAll(vhostPath, 0755); err == nil {
 			if err := exec.Command(os.Args[0], "vhost", "add", domain, projectPath).Run(); err == nil {
 				color.Green("Virtualhost %s added!", domain)
-			}
-		}
-		// Per-project version (if exists)
-		if cfg.ProjectVersions != nil {
-			if pv, ok := cfg.ProjectVersions[name]; ok {
-				color.Yellow("Using per-project PHP/MySQL version for %s", name)
-				cfg.PHPPath = pv.PHPPath
-				cfg.MySQLPath = pv.MySQLPath
 			}
 		}
 	},

@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/FerzDevZ/ferzlmp/internal/config"
 	"github.com/FerzDevZ/ferzlmp/internal/vhost"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
@@ -18,7 +17,7 @@ var vhostCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		action := args[0]
 		domain := args[1]
-		cfg, err := config.LoadConfig(filepath.Join("config", "ferzlmp.yaml"))
+		_, err := config.LoadConfig(filepath.Join("config", "ferzlmp.yaml"))
 		if err != nil {
 			color.Red("Failed to load config: %v", err)
 			return
