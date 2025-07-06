@@ -1,0 +1,6 @@
+apache_path: "./modules/apache/bin/httpd"
+mysql_path: "./modules/mysql/bin/mysqld"
+php_path: "./modules/php/bin/php"
+project_root: "./projects"
+port_apache: 80
+port_mysql: 3306
