@@ -12,7 +12,14 @@ var initCmd = &cobra.Command{
 	Short: "Initialize FerzLmp folders and config",
 	Long:  `Creates the default folder structure and config file for FerzLmp. Run this after install!`,
 	Run: func(cmd *cobra.Command, args []string) {
-		dirs := []string{"projects", "modules/apache/conf/vhosts", "modules/mysql", "modules/php", "config"}
+		dirs := []string{
+			"projects",
+			"modules/apache/bin",
+			"modules/apache/conf/vhosts",
+			"modules/php/bin",
+			"modules/mysql/bin",
+			"config",
+		}
 		for _, d := range dirs {
 			if err := os.MkdirAll(d, 0755); err != nil {
 				color.Red("Failed to create %s: %v", d, err)
@@ -36,7 +43,7 @@ vhost_dir: modules/apache/conf/vhosts
 			color.Yellow("Config already exists at %s", configPath)
 		}
 		color.Green("FerzLmp folder structure initialized!")
-		color.Cyan("Next: ferzlmp doctor && ferzlmp new [laravel|wordpress] [name]")
+		color.Cyan("\nSelanjutnya:\n- Letakkan/copy binary Apache, PHP, MySQL ke modules/[apache|php|mysql]/bin/\n- Atau, edit config/ferzlmp.yaml untuk pakai binary sistem\n- Buat project baru: ferzlmp new [laravel|wordpress] [namaproject]\n- Atau, pindahkan project lama ke folder projects/\n- Jalankan: ferzlmp start\n- Akses project di http://[namaproject].test\n")
 	},
 }
 
