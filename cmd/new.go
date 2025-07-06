@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"github.com/FerzDevZ/ferzlmp/internal/config"
 )
 
 var newCmd = &cobra.Command{

@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"github.com/ferzdev/ferzlmp/internal/config"
-	"github.com/ferzdev/ferzlmp/internal/services"
-	"github.com/ferzdev/ferzlmp/internal"
+
+	"github.com/FerzDevZ/ferzlmp/internal/config"
+	"github.com/FerzDevZ/ferzlmp/internal/services"
+	"github.com/FerzDevZ/ferzlmp/internal"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )

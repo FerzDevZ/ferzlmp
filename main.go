@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ferzdev/ferzlmp/cmd"
+	"github.com/FerzDevZ/ferzlmp/cmd"
 )
 
 func main() {
