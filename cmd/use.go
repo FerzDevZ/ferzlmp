@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/FerzDevZ/ferzlmp/internal/config"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v2"

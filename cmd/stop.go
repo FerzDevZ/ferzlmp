@@ -4,7 +4,6 @@ import (
 	"github.com/FerzDevZ/ferzlmp/internal/config"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
-	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime"

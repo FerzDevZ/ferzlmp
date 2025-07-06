@@ -1,11 +1,13 @@
 package cmd
 
 import (
+	"github.com/FerzDevZ/ferzlmp/internal/config"
+	"github.com/FerzDevZ/ferzlmp/internal/services"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"os"
-	"path/filepath"
 	"os/exec"
+	"path/filepath"
 )
 
 var doctorCmd = &cobra.Command{
@@ -20,12 +22,12 @@ var doctorCmd = &cobra.Command{
 			return
 		}
 		// Check ports
-		if internal.IsPortInUse(cfg.PortApache) {
+		if services.IsPortInUse(cfg.PortApache) {
 			color.Red("Port %d (Apache) is in use!", cfg.PortApache)
 		} else {
 			color.Green("Port %d (Apache) is free.", cfg.PortApache)
 		}
-		if internal.IsPortInUse(cfg.PortMySQL) {
+		if services.IsPortInUse(cfg.PortMySQL) {
 			color.Red("Port %d (MySQL) is in use!", cfg.PortMySQL)
 		} else {
 			color.Green("Port %d (MySQL) is free.", cfg.PortMySQL)
