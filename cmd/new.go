@@ -13,7 +13,7 @@ import (
 var newCmd = &cobra.Command{
 	Use:   "new [type] [name]",
 	Short: "Create a new Laravel or WordPress project",
-	Long:  `Downloads starter files and sets up vhost for Laravel or WordPress projects.",
+	Long:  `Downloads starter files and sets up vhost for Laravel or WordPress projects.`,
 	Args:  cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 		ptype := args[0]

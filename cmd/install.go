@@ -13,7 +13,7 @@ import (
 var installCmd = &cobra.Command{
 	Use:   "install [module] [version]",
 	Short: "Install PHP, MySQL, or Apache binaries",
-	Long:  `Downloads and installs the specified module (php/mysql/apache) and version.",
+	Long:  `Downloads and installs the specified module (php/mysql/apache) and version.`,
 	Args:  cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 		module := args[0]

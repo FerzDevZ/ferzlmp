@@ -13,7 +13,7 @@ import (
 var useCmd = &cobra.Command{
 	Use:   "use [module] [version]",
 	Short: "Switch active PHP or MySQL version",
-	Long:  `Sets the active version of PHP or MySQL globally or per project.",
+	Long:  `Sets the active version of PHP or MySQL globally or per project.`,
 	Args:  cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 		module := args[0]

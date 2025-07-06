@@ -14,7 +14,7 @@ import (
 var doctorCmd = &cobra.Command{
 	Use:   "doctor",
 	Short: "Diagnose environment and check for issues",
-	Long:  `Checks system ports, required binaries, permissions, and virtualhost config.",
+	Long:  `Checks system ports, required binaries, permissions, and virtualhost config.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		color.Cyan("[FerzLmp] Running diagnostics...")
 		cfg, err := config.LoadConfig(filepath.Join("config", "ferzlmp.yaml"))

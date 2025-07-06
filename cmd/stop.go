@@ -15,7 +15,7 @@ import (
 var stopCmd = &cobra.Command{
 	Use:   "stop",
 	Short: "Stop Apache and MySQL services",
-	Long:  `Stops Apache and MySQL services if running.",
+	Long:  `Stops Apache and MySQL services if running.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		cfg, err := config.LoadConfig(filepath.Join("config", "ferzlmp.yaml"))
 		if err != nil {
